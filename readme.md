@@ -1,38 +1,38 @@
 # Introduction
 About Docomo
-Coding Test rules, expectations....
+Coding Test rules
 
 ## User Story
 As a Merchant
 
 In order to revert a debit operation
 
-I need to be able of refund the debit operation by its id
+I need to be able to refund the debit operation by its id.
 
 ## Acceptance criteria
 - API should expose the following endpoint POST /operations/{id}/refund
 - The "id" should be a valid uuid v4 (ex. d1e90d8f-11f7-41e0-92ff-235e2a85ab3b) otherwise the response status is 400
-- Only one concurrent refund operation can be performed so the resource should be blocked if another refund is being processed 
-- If the resource is blocked the response status is 423
+- Only one concurrent refund operation can be performed, so the resource should be blocked if another refund is being processed
+- If the resource is blocked, the response status is 423
 - A successful response status is 201
 
 ## Expectations
-- You have to create a test runner, which execute the API from outside via HTTP. 
-- The test runner should generate a report file describing the test cases executed and its result
+- You have to create a test runner, which executes the API from outside via HTTP.
+- The test runner should generate a report file describing the test cases executed and their result
 - You should provide a GIT repository accessible with your code.
 - The repo should contain a readme.md with clear instructions of how to execute the test runner and get the report.
 
 ## Requirements
-The application is prepared to be run using docker-compose. So having docker and docker-compose configured is a mandatory.
+The application is prepared to be run using docker-compose. So having docker and docker-compose configured is mandatory.
 
 https://docs.docker.com/compose/install/
 
 ## Application start
-After having docker configured there is only a command needed to start the application.
+After having docker configured, there is only a command needed to start the application.
 ```shell
 docker-compose up
 ```
 It will be available at http://localhost:8088
 
 ### Disclaimer
-Don't use any of this code in production, it was created for the purpose of a simple coding-test.
+Don't use any of this code in production. It was created for a simple coding test.
