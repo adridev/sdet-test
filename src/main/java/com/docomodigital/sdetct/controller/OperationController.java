@@ -29,19 +29,19 @@ public class OperationController {
 
         try {
             final boolean acquired = lock.tryLock(1000, TimeUnit.MILLISECONDS);
-            if (acquired) {
-                try {
-                    Thread.sleep(3000);
-                } catch (Exception e) {
-                    throw new RuntimeException("Error during refund");
-                } finally {
-                    lock.unlock();
-                }
-            } else {
+            if (!acquired) {
                 throw new RuntimeException("Error acquiring lock");
             }
         } catch (Exception e) {
             throw new ResourceInUseException("Operation " + id + " is in use", e);
+        }
+
+        try {
+            Thread.sleep(3000);
+        } catch (Exception e) {
+            throw new RuntimeException("Error during refund");
+        } finally {
+            lock.unlock();
         }
     }
 }
