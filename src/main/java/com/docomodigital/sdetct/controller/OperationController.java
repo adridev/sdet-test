@@ -28,7 +28,7 @@ public class OperationController {
         final Lock lock = lockRegistry.obtain(id.toString());
 
         try {
-            final boolean acquired = lock.tryLock(500, TimeUnit.MILLISECONDS);
+            final boolean acquired = lock.tryLock(1000, TimeUnit.MILLISECONDS);
             if (acquired) {
                 try {
                     Thread.sleep(3000);
