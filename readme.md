@@ -1,13 +1,16 @@
-# Introduction
-About Docomo
-Coding Test rules
+## Context
+Our application is a payment gateway which allows merchants to change their users with a single integration.
+
+Right now we are able to charge users, and we want to add the refund feature.
+
+Following User Story describes the expected behavior and what needs to be tested.
 
 ## User Story
 As a Merchant
 
-In order to revert a debit operation
+In order to revert a previous transaction
 
-I need to be able to refund the debit operation by its id.
+I need to be able to refund a charge operation by its id.
 
 ## Acceptance criteria
 - API should expose the following endpoint POST /operations/{id}/refund
@@ -16,11 +19,12 @@ I need to be able to refund the debit operation by its id.
 - If the resource is blocked, the response status is 423
 - A successful response status is 201
 
-## Expectations
-- You have to create a test runner, which executes the API from outside via HTTP.
+## Your work
+- Provide a test runner written in Java
+- The test runner should execute the API from outside via HTTP.
 - The test runner should generate a report file describing the test cases executed and their result
-- You should provide a GIT repository accessible with your code.
-- The repo should contain a readme.md with clear instructions of how to execute the test runner and get the report.
+- You should provide a GIT repository accessible with the solution.
+- The repo should contain a readme.md with clear instructions of how to execute it.
 
 ## Requirements
 The application is prepared to be run using docker-compose. So having docker and docker-compose configured is mandatory.
@@ -33,6 +37,7 @@ After having docker configured, there is only a command needed to start the appl
 docker-compose up
 ```
 It will be available at http://localhost:8088
+
 
 ### Disclaimer
 Don't use any of this code in production. It was created for a simple coding test.
