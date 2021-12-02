@@ -1,5 +1,5 @@
 ## Context
-Our application is a payment gateway which allows merchants to change their users with a single integration.
+Our application is a payment gateway which allows merchants to charge their users with a single integration.
 
 Right now we are able to charge users, and we want to add the refund feature.
 
