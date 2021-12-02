@@ -15,10 +15,9 @@ I need to be able to refund a charge operation by its id.
 
 ### Acceptance criteria
 - API should expose the following endpoint POST /operations/{id}/refund
-- The "id" should be a valid uuid v4 (ex. d1e90d8f-11f7-41e0-92ff-235e2a85ab3b) otherwise the response status is 400
-- Only one concurrent refund for the same operation id can be performed, so the resource should be blocked if another refund is being processed
-- If the resource is blocked, the response status is 423
-- A successful response status is 201
+- The "id" should be a valid uuid v4 (ex. d1e90d8f-11f7-41e0-92ff-235e2a85ab3b) to get 201 OK
+- With an invalid ID you should get a 400
+- Only one concurrent refund operation can be performed, so the resource should be blocked if another refund is being processed. Failing concurrencies should get a 423
 ___
 ## Your work
 - Provide a test runner written in Java. It has to be decoupled from the provided application code.
