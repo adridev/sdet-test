@@ -2,11 +2,7 @@ version: '3'
 
 services:
   app:
-    build:
-      context: "./"
-      dockerfile: "Dockerfile"
-    volumes:
-      - "./:/workspace/app"
+    image: adridev/sdet-ct
     ports:
       - "8088:8080" # from local machine the app will be accessible at http://localhost:8088
   redis:
