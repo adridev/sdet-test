@@ -18,10 +18,9 @@ I need to be able to refund a charge operation by its id.
 - The "id" should be a valid uuid v4 (ex. d1e90d8f-11f7-41e0-92ff-235e2a85ab3b) to get 201 OK
 - With an invalid uuid you should get a 400
 - Only one concurrent refund operation (on the same transaction id) can be performed, so the resource should be blocked if another refund is being processed. Failing concurrencies should get a 423
+
 ___
 ## Your work
-- Provide a test runner written in Java. It has to be decoupled from the provided application code.
-- The test runner should execute the API from outside via HTTP.
 - The test runner should generate a report file
 - You should provide a GIT repository accessible with the solution.
 - The repo should contain a readme.md with clear instructions of how to execute it.
@@ -36,8 +35,4 @@ After having docker configured, there is only a command needed to start the appl
 ```shell
 docker-compose up
 ```
-It will be available at http://localhost:8088 (a Spring whitelabel error is expected)
-
-
-### Disclaimer
-Don't use any of this code in production. It was created for a simple coding test.
+Then the application should be available at http://localhost:8088 (a Spring whitelabel error is expected)
